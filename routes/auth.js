@@ -14,7 +14,7 @@ router.get('/token', async (req,res) => {
             url: 'https://api.fyers.in/api/v2/validate-authcode',
             data:{
                 "grant_type":"authorization_code",
-                "appIdHash":"18a78d33d5bf2f77056283bd73656a57766c04e051f09703aeeb6dfd661dfe52",
+                "appIdHash":process.env.appIdHash,
                 "code":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkubG9naW4uZnllcnMuaW4iLCJpYXQiOjE2MjgwODIzODUsImV4cCI6MTYyODA4MjY4NSwibmJmIjoxNjI4MDgyMzg1LCJhdWQiOiJbXCJ4OjJcIiwgXCJkOjJcIiwgXCJkOjFcIiwgXCJ4OjFcIiwgXCJ4OjBcIl0iLCJzdWIiOiJhdXRoX2NvZGUiLCJkaXNwbGF5X25hbWUiOiJYSDAwNTYyIiwibm9uY2UiOiIiLCJhcHBfaWQiOiJJWjhDRUxQT0pOIiwidXVpZCI6IjdmYzE5Y2UyMjMwMTQ3ZTBiN2MxYzIzY2M0ZDgyNjgyIiwiaXBBZGRyIjoiNDkuMzYuMjEwLjM1Iiwic2NvcGUiOiIifQ.4KL3V0obxbi3dq_xhd7vqcQWcV9pYsqp33h8RIGchnk"
             }
         })

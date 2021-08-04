@@ -5,9 +5,11 @@ const mongoose = require("mongoose");
 
 dotenv.config();
 
-const router_data = require('./routes/auth.js')
+const router_auth = require('./routes/auth.js')
+const router_account = require('./routes/account.js')
 
-app.use(router_data)
+app.use(router_auth)
+app.use(router_account)
 
 //connection to db
 mongoose.set("useFindAndModify", false)

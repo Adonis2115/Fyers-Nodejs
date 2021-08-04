@@ -16,7 +16,7 @@ Token.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, res) {
 router.get('/profile', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/profile',
+        url: `${process.env.baseURL}profile`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -33,7 +33,7 @@ router.get('/profile', (req,res) => {
 router.get('/funds', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/funds',
+        url: `${process.env.baseURL}funds`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -50,7 +50,7 @@ router.get('/funds', (req,res) => {
 router.get('/holdings', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/holdings',
+        url: `${process.env.baseURL}holdings`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -67,7 +67,7 @@ router.get('/holdings', (req,res) => {
 router.get('/positions', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/positions',
+        url: `${process.env.baseURL}positions`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -84,7 +84,7 @@ router.get('/positions', (req,res) => {
 router.get('/pnl', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/positions',
+        url: `${process.env.baseURL}positions`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -101,7 +101,7 @@ router.get('/pnl', (req,res) => {
 router.get('/orders', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/orders',
+        url: `${process.env.baseURL}orders`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -118,7 +118,7 @@ router.get('/orders', (req,res) => {
 router.get('/tradebook', (req,res) => {
     axios({
         method: 'get',
-        url: 'https://api.fyers.in/api/v2/tradebook',
+        url: `${process.env.baseURL}tradebook`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   

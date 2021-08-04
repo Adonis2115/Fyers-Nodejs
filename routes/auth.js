@@ -11,7 +11,7 @@ router.get('/token', async (req,res) => {
     try{
         await axios({
             method: 'post',
-            url: 'https://api.fyers.in/api/v2/validate-authcode',
+            url: `${process.env.baseURL}validate-authcode`,
             data:{
                 "grant_type":"authorization_code",
                 "appIdHash":process.env.appIdHash,

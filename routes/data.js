@@ -16,7 +16,7 @@ Token.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, res) {
 router.get('/historical', (req,res) => {
     axios({
         method: 'get',
-        url: `${process.env.dataURL}history/?symbol=${"NSE:SBIN-EQ"}&resolution=${"30"}&date_format=1&range_from=${"2021-08-01"}&range_to=${"2021-08-02"}&cont_flag=`,
+        url: `${process.env.dataURL}history/?symbol=${"NSE:NIFTYBANK-INDEX"}&resolution=${"30"}&date_format=1&range_from=${"2021-08-01"}&range_to=${"2021-08-02"}&cont_flag=`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   
@@ -33,7 +33,7 @@ router.get('/historical', (req,res) => {
 router.get('/quote', (req,res) => {
     axios({
         method: 'get',
-        url: `${process.env.dataURL}quotes/?symbols=NSE:SBIN-EQ`,
+        url: `${process.env.dataURL}quotes/?symbols=NSE:NIFTYBANK-INDEX`,
         headers: {
             "Authorization": `${process.env.appID}:${token}`
         }   

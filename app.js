@@ -15,6 +15,7 @@ app.use(router_data)
 
 //connection to db
 mongoose.set("useFindAndModify", false)
+mongoose.set("useUnifiedTopology", true)
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 app.listen(process.env.port, () => console.log(`Server Up and running at ${process.env.port}`));
 });

@@ -15,7 +15,7 @@ router.get('/token', async (req,res) => {
             data:{
                 "grant_type":"authorization_code",
                 "appIdHash":process.env.appIdHash,
-                "code":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGkubG9naW4uZnllcnMuaW4iLCJpYXQiOjE2MjgwODIzODUsImV4cCI6MTYyODA4MjY4NSwibmJmIjoxNjI4MDgyMzg1LCJhdWQiOiJbXCJ4OjJcIiwgXCJkOjJcIiwgXCJkOjFcIiwgXCJ4OjFcIiwgXCJ4OjBcIl0iLCJzdWIiOiJhdXRoX2NvZGUiLCJkaXNwbGF5X25hbWUiOiJYSDAwNTYyIiwibm9uY2UiOiIiLCJhcHBfaWQiOiJJWjhDRUxQT0pOIiwidXVpZCI6IjdmYzE5Y2UyMjMwMTQ3ZTBiN2MxYzIzY2M0ZDgyNjgyIiwiaXBBZGRyIjoiNDkuMzYuMjEwLjM1Iiwic2NvcGUiOiIifQ.4KL3V0obxbi3dq_xhd7vqcQWcV9pYsqp33h8RIGchnk"
+                "code":process.env.auth_code
             }
         })
         .then(async response => {

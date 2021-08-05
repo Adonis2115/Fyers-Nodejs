@@ -10,7 +10,7 @@ router.use(bodyParser)
 var token
 
 Token.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, res) {
-    token = res.access_token
+  token = res.access_token
 })
 
 router.get('/profile', (req,res) => {

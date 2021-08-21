@@ -19,6 +19,7 @@
     "mongoose": "^5.13.5",
     "nodemon": "^2.0.12",
     "open": "^8.2.1",
+    "selenium-webdriver": "^4.0.0-beta.4",
     "supertest": "^6.1.4"
   }
 }

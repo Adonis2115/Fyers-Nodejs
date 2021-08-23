@@ -3,7 +3,6 @@ const router = express.Router()
 bodyParser = require('body-parser').json()
 const app = require("../app")
 const axios = require('axios')
-const Token = require("../models/token")
 const fs = require("fs")
 const { stringify } = require("querystring")
 

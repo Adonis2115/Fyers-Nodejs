@@ -3,14 +3,29 @@ const router = express.Router()
 bodyParser = require('body-parser').json()
 const app = require("../app")
 const axios = require('axios')
-const Token = require("../models/token")
+const fs = require("fs")
+const { Console } = require("console")
 
 router.use(bodyParser)
 
-var token
-
-Token.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, res) {
-  token = res.access_token
+var token 
+fs.readFile("./token.json", "utf8", async(err, jsonString) => {
+  if (err) {
+      const token = {
+          access_token: ""
+      }
+      const jsonString = JSON.stringify(token)
+      fs.writeFile('./token.json', jsonString, err => {
+          if (err) {
+              console.log('Error writing file', err)
+          } else {
+              console.log('Successfully wrote file')
+          }
+      })
+      autCodeGenerate()
+      return
+  }
+  token = await JSON.parse(jsonString).access_token  
 })
 
 router.get('/profile', (req,res) => {

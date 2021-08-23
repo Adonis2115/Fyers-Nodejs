@@ -106,12 +106,7 @@ try{
       })
 }
 catch{
-    console.log("Catch")
     autCodeGenerate()
-}
-finally {
-    // call funds function
-    console.log("Finally")
 }
 
 router.get('/token', async (req,res) => {

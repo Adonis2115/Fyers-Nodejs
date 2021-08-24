@@ -109,8 +109,4 @@ catch{
     autCodeGenerate()
 }
 
-router.get('/token', async (req,res) => {
-    // code
-})
-
 module.exports = router

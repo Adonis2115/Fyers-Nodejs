@@ -15,10 +15,10 @@ router.use(bodyParser)
 async function rsiStrategy(){
     var market
     xyz.historicalData("NSE:SBIN-EQ","15","2021-08-01","2021-08-26")
-    .then((response)=>{
+    .then(response => {
         console.log(response)
-        market = response
-        console.log(market)
+        // market = response
+        // console.log(market)
     })
     var rsi = 60
     var timeFrame = 60

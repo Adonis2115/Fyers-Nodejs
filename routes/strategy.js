@@ -29,10 +29,10 @@ async function rsiStrategy(){
             high: market.high,
             low: market.low,
             close: market.close,
-            optInTimePeriod: 9
+            optInTimePeriod: 14
         }, function (err, result) {
             console.log("ADX Function Results:")
-            console.log(result)
+            console.log(result.result.outReal.reverse())
     
         })
     })

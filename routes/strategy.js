@@ -6,12 +6,13 @@ const data = require('./data')
 var talib = require('talib')
 const axios = require('axios')
 const xyz = require("./data")
+const fs = require("fs")
 
 // router.use(bodyParser)
 
 async function rsiStrategy(){
     var market
-    xyz.historicalData("NSE:SBIN-EQ","15","2021-08-01","2021-08-26")
+    xyz.historicalData("NSE:SBIN-EQ","15","2021-08-10","2021-08-31")
     .then(response => {
         market = response
         var rsi = 60
@@ -22,21 +23,33 @@ async function rsiStrategy(){
         var target = 2.5*sl
         var tsl = [1,0.5]
         var stock = "NSE:SBIN-EQ"
+        // talib.execute({
+        //     name: "ADX",
+        //     startIdx: 0,
+        //     endIdx: market.close.length - 1,
+        //     high: market.high,
+        //     low: market.low,
+        //     close: market.close,
+        //     optInTimePeriod: 14
+        // }, function (err, result) {
+        //     console.log("ADX Function Results:")
+        //     console.log(result.result.outReal.reverse())
+    
+        // })
         talib.execute({
-            name: "ADX",
+            name: "RSI",
             startIdx: 0,
             endIdx: market.close.length - 1,
-            high: market.high,
-            low: market.low,
-            close: market.close,
+            inReal: market.close,
             optInTimePeriod: 14
         }, function (err, result) {
-            console.log("ADX Function Results:")
-            console.log(result.result.outReal.reverse())
-    
+            console.log("RSI Function Results:")
+            console.log(result.result.outReal.reverse()) 
         })
     })
 }
 
+// console.dir(talib.explain("RSI"))
+// console.dir(talib.explain("ADX"))
+
 rsiStrategy()
-module.exports = router

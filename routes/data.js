@@ -27,8 +27,6 @@ router.use(bodyParser)
 // })
 
 module.exports.historicalData = async (script, timeframe, from, to) => {
-    console.log(4);
-
     var data = { open: [], close: [], high: [], low: [], volume: [], time: [] }
     try {
         const result = await axios.get(`${process.env.dataURL}history/?symbol=${script}&resolution=${timeframe}&date_format=1&range_from=${from}&range_to=${to}&cont_flag=`, {
